@@ -1,6 +1,7 @@
 import com.sun.jdi.CharValue;
 
 import java.util.regex.Pattern;
+/*Завдання тестування*/
 
 public class MyUtils {
     public static boolean checkEmail(String text) {
