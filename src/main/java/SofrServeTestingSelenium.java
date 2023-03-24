@@ -42,15 +42,15 @@ public class SofrServeTestingSelenium {
         presentationSleep(5);
         driver.findElement(By.cssSelector("button.btn.btn-link.dropdown-toggle")).click();
         presentationSleep(5);
-        driver.findElement(By.name("USD")).click();
+        driver.findElement(By.name("EUR")).click();
         presentationSleep(5);
         driver.findElement(By.name("search")).click();
         driver.findElement(By.name("search")).clear();
         driver.findElement(By.name("search")).sendKeys("mac", Keys.ENTER);
         presentationSleep(5);
         //then
-        WebElement price = driver.findElement(By.xpath("//a[text()='MacBook']/../following-sibling::p[@class='price']"));
-        Assert.assertTrue(price.getText().contains("$602.00"));
+        WebElement price = driver.findElement(By.xpath("//a[text()='iMac']/../following-sibling::p[@class='price']"));
+        Assert.assertFalse(price.getText().contains("111.55€"));
 
         // tears down
         driver.quit();
